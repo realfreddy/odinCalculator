@@ -8,15 +8,28 @@ body {
   background: linear-gradient(to bottom, #2d2d2d, #0d0d0d);
 }
 .displaynumbers {
-  width: 100%;
-  height: 90px;
-  border-radius: 15px;
-  background-color: white;
-  margin-bottom: 10px;
+    width: 100%;
+    height: 90px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;  /* Padding included in width! */
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+.display-text{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
 }
 .main-calculator {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px;
   width: 400px;
   height: 500px;

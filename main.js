@@ -1,3 +1,4 @@
+const display = document.querySelector(".displaynumbers");
 function add(x,y){
     return x + y;
 }
