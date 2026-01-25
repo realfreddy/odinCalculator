@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FredCalc - Calculator</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -14,39 +14,39 @@
   <body>
     <div class="main-calculator">
       <div class="displaynumbers">
-        <div class="display-text"></div>
+        <div class="display-text">0</div>
       </div>
       <div class="buttoncontainer">
         <div class="buttons-column">
-          <button class="clear-button">AC</button>
-          <button>7</button>
-          <button>4</button>
-          <button>1</button>
-          <button>+/-</button>
+          <button class="clear-button special-btn" id="clear">AC</button>
+          <button class="number-btn" data-number="7">7</button>
+          <button class="number-btn" data-number="4">4</button>
+          <button class="number-btn" data-number="1">1</button>
+          <button class="special-btn" id="toggle-sign">+/-</button>
         </div>
 
         <div class="buttons-column">
-          <button>X</button>
-          <button>8</button>
-          <button>5</button>
-          <button>2</button>
-          <button>0</button>
+          <button class="operator-btn" data-operator="*">×</button>
+          <button class="number-btn" data-number="8">8</button>
+          <button class="number-btn" data-number="5">5</button>
+          <button class="number-btn" data-number="2">2</button>
+          <button class="number-btn zero-btn" data-number="0">0</button>
         </div>
 
         <div class="buttons-column">
-          <button>/</button>
-          <button>9</button>
-          <button>6</button>
-          <button>3</button>
-          <button>.</button>
+          <button class="operator-btn" data-operator="/"">÷</button>
+          <button class="number-btn" data-number="9">9</button>
+          <button class="number-btn" data-number="6">6</button>
+          <button class="number-btn" data-number="3">3</button>
+          <button class="decimal-btn special-btn" id="decimal">.</button>
         </div>
 
         <div class="buttons-column">
-          <button>*</button>
-          <button>-</button>
-          <button>+</button>
-          <button>=</button>
-          <button>😊</button>
+          <button class="special-btn" id="backspace">⌫</button> 
+          <button class="operator-btn" data-operator="-">-</button>
+          <button class="operator-btn" data-operator="+">+</button>
+          <button class="equals-btn" id="equals">=</button>
+          <button class="info-btn" id="info">FredCalc.</button>
         </div>
       </div>
     </div>

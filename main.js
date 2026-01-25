@@ -1,21 +1,27 @@
 const display = document.querySelector(".display-text");
-const buttons = document.querySelector(".buttoncontainer");
+const buttonContainer = document.querySelector(".buttoncontainer");
+const buttons = document.querySelectorAll(".buttoncontainer button");
+const equalsButton = document.querySelector("#equals");
+
 function add(x, y) {
   return x + y;
 }
+
 function subtract(x, y) {
   return x - y;
 }
+
 function multiply(x, y) {
   return x * y;
 }
+
 function divide(x, y) {
   return x / y;
 }
 
-let numberOne;
-let numberTwo;
-let operation;
+let numberOne = 0;
+let numberTwo = 0;
+let operation = "";
 
 function operate(numberOne, numberTwo, operation) {
   if (operation === "+") {
@@ -24,18 +30,41 @@ function operate(numberOne, numberTwo, operation) {
   if (operation === "-") {
     return subtract(numberOne, numberTwo);
   }
-  if (operation === "*") {
+  if (operation === "×") {
     return multiply(numberOne, numberTwo);
   }
-  if (operation === "/") {
+  if (operation === "÷") {
     return divide(numberOne, numberTwo);
   }
 }
-buttons.addEventListener("click", (event) => {
+
+buttonContainer.addEventListener("click", (event) => {
   const buttonText = event.target.textContent;
+
   if (buttonText === "AC") {
-    display.textContent = "";
+    display.textContent = "0";
+  } else if (
+    buttonText === "+" ||
+    buttonText === "-" ||
+    buttonText === "×" ||
+    buttonText === "÷"
+  ) {
+    numberOne = display.textContent;
+    operation = event.target.textContent;
+    clearDisplay();
+  } else if (buttonText === "=") {
+    numberTwo = display.textContent;
+    result = operate(parseFloat(numberOne), parseFloat(numberTwo), operation);
+    display.textContent = result;
   } else {
-    display.textContent += buttonText;
+    if (display.textContent === "0") {
+      display.textContent = buttonText;
+    } else {
+      display.textContent += buttonText;
+    }
   }
 });
+
+function clearDisplay() {
+  return (display.textContent = "");
+}
