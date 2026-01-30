@@ -39,6 +39,8 @@ function operate(numberOne, numberTwo, operation) {
 }
 
 buttonContainer.addEventListener("click", (event) => {
+  if (!event.target.matches('button')) return;
+
   const buttonText = event.target.textContent;
 
   if (buttonText === "AC") {
@@ -55,7 +57,7 @@ buttonContainer.addEventListener("click", (event) => {
   } else if (buttonText === "=") {
     numberTwo = display.textContent;
     result = operate(parseFloat(numberOne), parseFloat(numberTwo), operation);
-    display.textContent = result;
+    display.textContent = result.toFixed(2);
   } else {
     if (display.textContent === "0") {
       display.textContent = buttonText;
